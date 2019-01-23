@@ -1,10 +1,10 @@
-## Associate Android Developer exam preparation
+## Implement a simple app in preparation for the AAD exam
 
-Bases on the content provided at the [Google Developer page](https://developers.google.com/training/certification/associate-android-developer/#exam-content).
+Based on the content provided at the [Google Developer page](https://developers.google.com/training/certification/associate-android-developer/#exam-content).
 
 #### User interface (UI) and app functionality
-- [ ] Create an Activity that displays a layout
-- [ ] Construct a UI with ConstraintLayout
+- [x] Create an Activity that displays a layout
+- [x] Construct a UI with ConstraintLayout
 - [ ] Create a custom view class and add it to a layout
 - [ ] Add accessibility hooks to a custom view
 - [ ] Apply content descriptions to views for accessibility
