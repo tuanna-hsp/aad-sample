@@ -5,7 +5,7 @@ Based on the content provided at the [Google Developer page](https://developers.
 #### User interface (UI) and app functionality
 - [x] Create an Activity that displays a layout
 - [x] Construct a UI with ConstraintLayout
-- [ ] Create a custom view class and add it to a layout
+- [x] Create a custom view class and add it to a layout
 - [ ] Add accessibility hooks to a custom view
 - [ ] Apply content descriptions to views for accessibility
 - [ ] Implement a custom app theme
