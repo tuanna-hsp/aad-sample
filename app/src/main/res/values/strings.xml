@@ -7,4 +7,6 @@
     <string name="display_notification">Display notification</string>
     <string name="display_snackbar">Display Snackbar</string>
     <string name="restart">Restart to apply changes.</string>
+
+    <string name="list_activity">List activity</string>
 </resources>

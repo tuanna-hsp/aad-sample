@@ -8,4 +8,6 @@
     <string name="display_notification">プッシュ通知を表示</string>
     <string name="display_snackbar">Snackbarを表示</string>
     <string name="restart">変更を適用するために再起動する必要があります</string>
+
+    <string name="list_activity">一覧画面</string>
 </resources>

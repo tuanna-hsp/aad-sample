@@ -6,16 +6,22 @@ import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnCheckedChanged;
@@ -27,7 +33,13 @@ public class MainActivity extends AppCompatActivity {
     private static String CHANNEL_ID = "AAD Sample";
 
     @BindView(R.id.themeSelector)
-    RadioGroup themeSelector;
+    RadioGroup mThemeSelector;
+
+    @BindView(R.id.nav_view)
+    NavigationView mNavigationView;
+
+    @BindView(R.id.drawer_layout)
+    DrawerLayout mDrawerLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +48,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
-        themeSelector.check(shouldUseLightTheme() ? R.id.lightThemeButton : R.id.darkThemeButton);
+        setupActionBar();
+        setupThemeSelector();
+        setupDrawer();
     }
 
     private void applyAppTheme() {
@@ -46,6 +60,46 @@ public class MainActivity extends AppCompatActivity {
     private boolean shouldUseLightTheme() {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
         return preferences.getBoolean(USE_LIGHT_THEME_KEY, true);
+    }
+
+    private void setupActionBar() {
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        ActionBar actionbar = getSupportActionBar();
+        actionbar.setDisplayHomeAsUpEnabled(true);
+        actionbar.setHomeAsUpIndicator(R.mipmap.ic_launcher_round);
+    }
+
+    private void setupThemeSelector() {
+        mThemeSelector.check(shouldUseLightTheme() ? R.id.lightThemeButton : R.id.darkThemeButton);
+    }
+
+    private void setupDrawer() {
+        mNavigationView.setNavigationItemSelectedListener(
+                menuItem -> {
+                    // set item as selected to persist highlight
+                    menuItem.setChecked(true);
+                    // close drawer when item is tapped
+                    mDrawerLayout.closeDrawers();
+
+                    switch (menuItem.getItemId()) {
+                        case R.id.nav_list_activity:
+                            break;
+                    }
+
+                    return true;
+                });
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                mDrawerLayout.openDrawer(GravityCompat.START);
+                return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
     @OnCheckedChanged({ R.id.lightThemeButton, R.id.darkThemeButton })
@@ -84,7 +138,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void showSnackbarMessage() {
-        Snackbar.make(themeSelector, R.string.restart, Snackbar.LENGTH_LONG).show();
+        Snackbar.make(mThemeSelector, R.string.restart, Snackbar.LENGTH_LONG).show();
     }
 
     private void showNotification() {
