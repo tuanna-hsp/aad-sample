@@ -8,7 +8,7 @@ Based on the content provided at the [Google Developer page](https://developers.
 - [x] Create a custom view class and add it to a layout
 - [x] Add accessibility hooks to a custom view
 - [x] Apply content descriptions to views for accessibility
-- [ ] Implement a custom app theme
+- [x] Implement a custom app theme
 - [ ] Display items in a RecyclerView
 - [ ] Bind local data to a RecyclerView list using the paging library
 - [ ] Implement menu-based or drawer navigation

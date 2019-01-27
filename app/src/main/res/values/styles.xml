@@ -6,6 +6,20 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="mainBackground">@color/colorMainBackground</item>
+        <item name="radioTextColor">@color/colorRadioText</item>
+        <item name="inverseFlagColor">false</item>
+    </style>
+
+    <!-- Base application theme. -->
+    <style name="AppThemeDark" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary2</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark2</item>
+        <item name="colorAccent">@color/colorAccent2</item>
+        <item name="mainBackground">@color/colorMainBackground2</item>
+        <item name="radioTextColor">@color/colorRadioText2</item>
+        <item name="inverseFlagColor">true</item>
     </style>
 
 </resources>

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="?mainBackground"
     tools:context=".MainActivity">
 
     <me.tuanna.aadsample.FlagView
@@ -13,6 +14,7 @@
         android:focusable="true"
         android:clickable="true"
         android:contentDescription="@string/flag_description"
+        app:inverse="?inverseFlagColor"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -35,13 +37,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:textColor="?radioTextColor"
             android:text="@string/dark_theme" />
 
         <RadioButton
-            android:id="@+id/radioButton"
+            android:id="@+id/lightThemeButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:textColor="?radioTextColor"
             android:text="@string/light_theme" />
     </RadioGroup>
 

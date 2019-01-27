@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="mainBackground" format="reference|color"/>
+    <attr name="radioTextColor" format="reference|color"/>
+    <attr name="inverseFlagColor" format="reference|boolean"/>
+
+    <declare-styleable name="FlagView">
+        <attr name="inverse" format="boolean" />
+    </declare-styleable>
+</resources>

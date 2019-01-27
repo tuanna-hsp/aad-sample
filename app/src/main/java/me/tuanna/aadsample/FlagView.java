@@ -1,6 +1,8 @@
 package me.tuanna.aadsample;
 
 import android.content.Context;
+import android.content.res.Resources;
+import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -24,17 +26,22 @@ public class FlagView extends View {
 
     public FlagView(Context context) {
         super(context);
+
         init();
     }
 
     public FlagView(Context context, AttributeSet attrs) {
         super(context, attrs);
+
         init();
+        applyCustomAttributes(attrs);
     }
 
     public FlagView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+
         init();
+        applyCustomAttributes(attrs);
     }
 
     private void init() {
@@ -43,6 +50,20 @@ public class FlagView extends View {
 
         mStarPaint = new Paint();
         mStarPaint.setColor(Color.YELLOW);
+    }
+
+    private void applyCustomAttributes(AttributeSet attrs) {
+        Resources.Theme theme = getContext().getTheme();
+        TypedArray a = theme.obtainStyledAttributes(attrs, R.styleable.FlagView, 0, 0);
+
+        try {
+            boolean isInverse = a.getBoolean(R.styleable.FlagView_inverse, false);
+            if (isInverse) {
+                inverseColor();
+            }
+        } finally {
+            a.recycle();
+        }
     }
 
     @Override
