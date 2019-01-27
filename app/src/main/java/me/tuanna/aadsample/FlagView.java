@@ -6,7 +6,10 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.util.AttributeSet;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.accessibility.AccessibilityEvent;
+import android.view.accessibility.AccessibilityNodeInfo;
 
 /**
  * View that draw Vietnam national flag.
@@ -16,6 +19,8 @@ public class FlagView extends View {
     private Paint mBackgroundPaint;
     private Paint mStarPaint;
     private Path mStarPath;
+
+    private boolean mHasDownTouch;
 
     public FlagView(Context context) {
         super(context);
@@ -96,5 +101,71 @@ public class FlagView extends View {
 
         canvas.drawRect(0, 0, getWidth(), getHeight(), mBackgroundPaint);
         canvas.drawPath(mStarPath, mStarPaint);
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        // Listening for the down and up touch events
+        switch (event.getAction()) {
+            case MotionEvent.ACTION_DOWN:
+                mHasDownTouch = true;
+                return true;
+
+            case MotionEvent.ACTION_UP:
+                if (mHasDownTouch) {
+                    mHasDownTouch = false;
+
+                    // Call this method to handle the response, and
+                    // thereby enable accessibility services to
+                    // perform this action for a user who cannot
+                    // click the touchscreen.
+                    performClick();
+                    return true;
+                }
+        }
+
+        return false;
+    }
+
+    @Override
+    public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo info) {
+        super.onInitializeAccessibilityNodeInfo(info);
+
+        info.setFocusable(true);
+        info.setClickable(true);
+        info.setText("The flag");
+    }
+
+    @Override
+    public void onPopulateAccessibilityEvent(AccessibilityEvent event) {
+        super.onPopulateAccessibilityEvent(event);
+
+        // Just adding it for fun but,
+        // I was not able to get the clicked event announced in TalkBack
+        if (event.getEventType() == AccessibilityEvent.TYPE_VIEW_CLICKED) {
+            event.getText().add("View was clicked");
+        }
+    }
+
+    @Override
+    public boolean performClick() {
+        // Calls the super implementation, which generates an AccessibilityEvent
+        // and calls the onClick() listener on the view, if any
+        super.performClick();
+
+        // Handle the action for the custom click here
+        inverseColor();
+
+        return true;
+    }
+
+    private void inverseColor() {
+        int newBackgroundColor = mBackgroundPaint.getColor() ^ 0xffffff;
+        mBackgroundPaint.setColor(newBackgroundColor);
+
+        int newStarColor = mStarPaint.getColor() ^ 0xffffff;
+        mStarPaint.setColor(newStarColor);
+
+        invalidate();
     }
 }

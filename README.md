@@ -6,7 +6,7 @@ Based on the content provided at the [Google Developer page](https://developers.
 - [x] Create an Activity that displays a layout
 - [x] Construct a UI with ConstraintLayout
 - [x] Create a custom view class and add it to a layout
-- [ ] Add accessibility hooks to a custom view
+- [x] Add accessibility hooks to a custom view
 - [ ] Apply content descriptions to views for accessibility
 - [ ] Implement a custom app theme
 - [ ] Display items in a RecyclerView
