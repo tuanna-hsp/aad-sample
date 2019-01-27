@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AADサンプル</string>
+
+    <string name="dark_theme">ダック</string>
+    <string name="light_theme">ライト</string>
+    <string name="flag_description">ベトナムの国旗</string>
+    <string name="display_notification">プッシュ通知を表示</string>
+    <string name="display_snackbar">Snackbarを表示</string>
+    <string name="restart">変更を適用するために再起動する必要があります</string>
+</resources>
