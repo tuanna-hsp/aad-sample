@@ -13,7 +13,7 @@ Based on the content provided at the [Google Developer page](https://developers.
 - [ ] Bind local data to a RecyclerView list using the paging library
 - [ ] Implement menu-based or drawer navigation
 - [ ] Localize the app
-- [ ] Display notifications, toasts, and snackbar messages
+- [x] Display notifications, toasts, and snackbar messages
 - [ ] Schedule a background task using JobScheduler
 - [ ] Efficiently run jobs in the background
 

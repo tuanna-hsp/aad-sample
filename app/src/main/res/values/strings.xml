@@ -4,4 +4,7 @@
     <string name="dark_theme">Dark theme</string>
     <string name="light_theme">Light theme</string>
     <string name="flag_description">Vietnam flag</string>
+    <string name="display_notification">Display notification</string>
+    <string name="display_snackbar">Display Snackbar</string>
+    <string name="restart">Restart to apply changes.</string>
 </resources>
