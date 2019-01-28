@@ -10,4 +10,5 @@
     <string name="restart">変更を適用するために再起動する必要があります</string>
 
     <string name="list_activity">一覧画面</string>
+    <string name="dummy_text">ほげほげ</string>
 </resources>

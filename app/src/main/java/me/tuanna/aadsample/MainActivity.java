@@ -2,6 +2,7 @@ package me.tuanna.aadsample;
 
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
@@ -84,11 +85,17 @@ public class MainActivity extends AppCompatActivity {
 
                     switch (menuItem.getItemId()) {
                         case R.id.nav_list_activity:
+                            startListActivity();
                             break;
                     }
 
                     return true;
                 });
+    }
+
+    private void startListActivity() {
+        Intent i = new Intent(this, ListActivity.class);
+        startActivity(i);
     }
 
     @Override

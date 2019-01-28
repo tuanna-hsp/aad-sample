@@ -9,4 +9,5 @@
     <string name="restart">Restart to apply changes.</string>
 
     <string name="list_activity">List activity</string>
+    <string name="dummy_text">Hoge hoge</string>
 </resources>

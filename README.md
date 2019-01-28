@@ -9,7 +9,7 @@ Based on the content provided at the [Google Developer page](https://developers.
 - [x] Add accessibility hooks to a custom view
 - [x] Apply content descriptions to views for accessibility
 - [x] Implement a custom app theme
-- [ ] Display items in a RecyclerView
+- [x] Display items in a RecyclerView
 - [ ] Bind local data to a RecyclerView list using the paging library
 - [x] Implement menu-based or drawer navigation
 - [x] Localize the app
