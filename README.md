@@ -10,7 +10,7 @@ Based on the content provided at the [Google Developer page](https://developers.
 - [x] Apply content descriptions to views for accessibility
 - [x] Implement a custom app theme
 - [x] Display items in a RecyclerView
-- [ ] Bind local data to a RecyclerView list using the paging library
+- [x] Bind local data to a RecyclerView list using the paging library
 - [x] Implement menu-based or drawer navigation
 - [x] Localize the app
 - [x] Display notifications, toasts, and snackbar messages
@@ -18,8 +18,8 @@ Based on the content provided at the [Google Developer page](https://developers.
 - [ ] Efficiently run jobs in the background
 
 #### App data and files
-- [ ] Define data using Room entities
-- [ ] Access Room database with data access object (DAO)
+- [x] Define data using Room entities
+- [x] Access Room database with data access object (DAO)
 - [ ] Observe and respond to changing data using LiveData
 - [ ] Use a Repository to handle data operations
 - [ ] Read and parse raw resources or asset files
